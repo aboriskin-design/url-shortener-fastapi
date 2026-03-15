@@ -1,6 +1,7 @@
 import asyncio
 
 from fastapi import FastAPI
+from fastapi.responses import RedirectResponse
 from sqlalchemy import text
 
 from app.auth import router as auth_router
@@ -9,6 +10,14 @@ from app.db import engine, init_db
 from app.links import router as links_router
 
 app = FastAPI(title="URL Shortener")
+
+
+from fastapi import Request
+
+@app.api_route("/", methods=["GET", "HEAD"], include_in_schema=False)
+async def root(request: Request):
+    return RedirectResponse(url="/docs")
+
 
 app.include_router(auth_router)
 app.include_router(links_router)
