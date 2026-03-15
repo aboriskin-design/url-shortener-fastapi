@@ -7,10 +7,15 @@
 основное:
 
 POST /links/shorten - создать короткую ссылку (можно custom_alias, можно expires_at)
+
 GET /links/{short_code} - редирект на оригинальный URL (и увеличивает счётчик переходов)
+
 GET /links/{short_code}/stats - статистика (оригинал, дата создания, клики, последнее использование)
+
 GET /links/search?original_url=.. - найти короткие ссылки по оригинальному URL
+
 PUT /links/{short_code} - обновить original_url (только владелец)
+
 DELETE /links/{short_code} - удалить ссылку (только владелец)
 
 дополнительно:
