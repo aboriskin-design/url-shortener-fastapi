@@ -10,3 +10,7 @@ python-dotenv==1.0.1
 
 redis==5.0.8
 httpx==0.27.2
+
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
