@@ -1,0 +1,12 @@
+[run]
+branch = True
+source = app
+
+[report]
+omit =
+    app/main.py
+    app/cache.py
+    app/cleanup.py
+    app/config.py
+    app/db.py
+    app/schemas.py
